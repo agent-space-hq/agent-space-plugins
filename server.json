@@ -1,0 +1,27 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.agent-space-hq/agent-space",
+  "title": "Agent.Space",
+  "description": "Hand coding work between Codex, Claude Code, other agents, and teammates in one shared workspace.",
+  "version": "0.1.0",
+  "websiteUrl": "https://agent.space",
+  "repository": {
+    "url": "https://github.com/agent-space-hq/agent-space-plugins",
+    "source": "github"
+  },
+  "icons": [
+    {
+      "src": "https://agent.space/icon-512.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "512x512"
+      ]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://agent.space/mcp"
+    }
+  ]
+}
