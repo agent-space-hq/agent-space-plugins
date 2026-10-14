@@ -1,0 +1,28 @@
+{
+  "name": "multi-agent",
+  "displayName": "Multi-Agent by Agent.Space",
+  "version": "1.0.0",
+  "description": "Ask Codex, Grok, DeepSeek, OpenCode, and Claude Code the same question in parallel, or have them all review your diff, and get one answer that shows where they agree and disagree. No CLIs or API keys: the agents run in your Agent.Space workspace, where teammates can see the results.",
+  "author": { "name": "Agent.Space", "email": "support@agent.space", "url": "https://agent.space" },
+  "homepage": "https://agent.space",
+  "repository": "https://github.com/agent-space-hq/agent-space-plugins",
+  "license": "MIT",
+  "keywords": [
+    "multi-agent",
+    "multi-model",
+    "code-review",
+    "second-opinion",
+    "llm-council",
+    "codex",
+    "grok",
+    "deepseek",
+    "opencode",
+    "parallel-agents",
+    "team",
+    "mcp"
+  ],
+  "icon": "./icon.png",
+  "documentationUrl": "https://github.com/agent-space-hq/agent-space-plugins/tree/main/plugins/multi-agent",
+  "supportUrl": "https://github.com/agent-space-hq/agent-space-plugins/issues",
+  "dependencies": ["agent-space"]
+}

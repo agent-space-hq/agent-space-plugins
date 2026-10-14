@@ -1,10 +1,14 @@
 {
   "name": "agent-space",
+  "displayName": "Agent.Space",
   "description": "Ask another Agent (Codex, Claude Code, Grok Build, OpenCode, DeepSeek Harness) to review your changes through Agent.Space, a multiplayer, multi-agent workspace.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": { "name": "Agent.Space", "url": "https://agent.space" },
   "homepage": "https://agent.space",
   "repository": "https://github.com/agent-space-hq/agent-space-plugins",
   "license": "MIT",
-  "keywords": ["multi-agent", "code-review", "codex", "second-opinion", "mcp"]
+  "keywords": ["multi-agent", "code-review", "codex", "second-opinion", "mcp"],
+  "icon": "./icon.png",
+  "documentationUrl": "https://github.com/agent-space-hq/agent-space-plugins",
+  "supportUrl": "https://github.com/agent-space-hq/agent-space-plugins/issues"
 }
