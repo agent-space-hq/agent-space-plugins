@@ -1,17 +1,17 @@
 ---
 name: review
-description: Use when the user wants several AI agents to review the same code change, for example "have Codex, Grok and DeepSeek review this", "multi-model code review", "panel review", or "get more than one review of my diff". Each agent reviews the diff independently through Agent.Space; the findings come back merged, with the ones several agents found first.
+description: Use when the user wants another AI agent, or several, to review the current code change, for example "have Codex review this", "get a second opinion on my diff", "have Codex, Grok and DeepSeek review this", "multi-model code review", or "panel review". Each agent reviews the diff independently through Agent.Space; the findings come back merged, with the ones several agents found first.
 argument-hint: "[base branch] [with codex, grok, deepseek, opencode, claude code]"
 ---
 
-# Panel code review
+# Code review by other agents
 
 Agent.Space runs Codex, Claude Code, Grok Build, OpenCode, and DeepSeek
 Harness side by side in one shared Workspace, billed to the user's
-Agent.Space plan or credits. This skill has several of them review the same
-diff independently, then merges what they found. Every tool below comes from
-the `agent-space` MCP server, which the `agent-space` plugin provides. The
-first call opens a browser sign-in; ask the user to finish it.
+Agent.Space plan or credits. This skill has one or more of them review the
+same diff independently, then merges what they found. Every tool below comes
+from the `agent-space` MCP server. The first call opens a browser sign-in;
+ask the user to finish it.
 
 Arguments: $ARGUMENTS
 
@@ -19,8 +19,10 @@ Arguments: $ARGUMENTS
    untracked files the user wants reviewed. When the arguments name a base
    branch, use `git diff <base>...HEAD`. If the diff is longer than about
    60,000 characters, ask the user which files to include.
-2. Pick the panel. Use the agents the user names. Otherwise pick three from
-   different model makers, leaving out the harness you are running in. Harness
+2. Pick the panel. Use the agents the user names. When the user asks for "a
+   second opinion" or "another agent", pick one: Codex when you are Claude
+   Code, Claude Code when you are Codex. Otherwise pick three from different
+   model makers, leaving out the harness you are running in. Harness
    IDs: `codex` (Codex), `grok` (Grok Build), `deepseekHarness` (DeepSeek
    Harness), `openCode` (OpenCode), `claudeCode` (Claude Code). When you are
    Claude Code, the default panel is `codex`, `grok`, `deepseekHarness`.

@@ -1,31 +1,35 @@
-# Agent.Space plugins for Claude Code
+# Agent.Space plugin for Claude Code
 
 Bring Codex, Grok, DeepSeek, OpenCode, and your teammates into Claude Code.
 [Agent.Space](https://agent.space) is a multiplayer, multi-agent workspace:
-many agents, many humans, one space. These plugins let Claude Code ask other
-agents for answers and reviews, and keep the results where your team can see
+many agents, many humans, one space. This plugin lets Claude Code ask other
+agents for answers and reviews, and keeps the results where your team can see
 them.
 
 ```
 /plugin marketplace add agent-space-hq/agent-space-plugins
-/plugin install multi-agent@agent-space
+/plugin install agent-space@agent-space
 ```
 
 The first run opens a browser sign-in to Agent.Space.
 
-## Plugins
+## Commands
 
-| Plugin | What it does | Use it |
-| --- | --- | --- |
-| [`multi-agent`](plugins/multi-agent) | Ask Codex, Grok, DeepSeek, OpenCode, and Claude Code the same question in parallel, or have them all review your diff. You get one answer that shows where they agree and disagree. | `/multi-agent:ask`, `/multi-agent:review` |
-| [`agent-space`](plugins/agent-space) | Connects Claude Code to Agent.Space and asks one other agent for a second opinion, such as Codex reviewing what Claude Code just wrote. `multi-agent` installs it for you. | "Have Codex review my changes" |
+| Command | What it does |
+| --- | --- |
+| `/agent-space:ask <question>` | Sends the question to three agents from different model makers at once and compares their answers. |
+| `/agent-space:review [base branch]` | Each agent reviews your diff independently. Findings come back merged, with Claude Code's verdict on each. |
+
+Name the agents you want, or let Claude Code pick Codex, Grok Build, and
+DeepSeek Harness. You can also just say it: "have Codex review my changes" or
+"ask a few other models whether this cache key is right".
 
 ## Examples
 
 ```
-/multi-agent:ask Should the job queue use Postgres advisory locks or a Redis lock?
-/multi-agent:ask with codex and grok: is this migration safe to run while the app is live?
-/multi-agent:review main
+/agent-space:ask Should the job queue use Postgres advisory locks or a Redis lock?
+/agent-space:ask with codex and grok: is this migration safe to run while the app is live?
+/agent-space:review main
 ```
 
 `ask` returns the best answer, a table of where the agents agree and differ,
@@ -53,9 +57,9 @@ to run before it sends anything. The agents cannot read your machine.
 
 ## Use it from any MCP client
 
-The plugins are skills on top of the Agent.Space remote MCP server at
+The plugin is skills on top of the Agent.Space remote MCP server at
 `https://agent.space/mcp` (Streamable HTTP, OAuth). Any client that supports
-remote MCP servers can connect to it. In Claude Code without the plugins:
+remote MCP servers can connect to it. In Claude Code without the plugin:
 
 ```
 claude mcp add --transport http agent-space https://agent.space/mcp
