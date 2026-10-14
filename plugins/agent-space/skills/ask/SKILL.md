@@ -10,8 +10,8 @@ Agent.Space runs Codex, Claude Code, Grok Build, OpenCode, and DeepSeek
 Harness side by side in one shared Workspace, billed to the user's
 Agent.Space plan or credits. This skill sends one question to several of them
 in parallel and compares the answers. Every tool below comes from the
-`agent-space` MCP server, which the `agent-space` plugin provides. The first
-call opens a browser sign-in; ask the user to finish it.
+`agent-space` MCP server. The first call opens a browser sign-in; ask the
+user to finish it.
 
 Question: $ARGUMENTS
 

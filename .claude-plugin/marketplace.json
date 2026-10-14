@@ -7,14 +7,9 @@
   },
   "plugins": [
     {
-      "name": "multi-agent",
-      "source": "./plugins/multi-agent",
-      "description": "Ask Codex, Grok, DeepSeek, OpenCode, and Claude Code the same question in parallel, or have them all review your diff, and get one answer that shows where they agree."
-    },
-    {
       "name": "agent-space",
       "source": "./plugins/agent-space",
-      "description": "Connect Claude Code to Agent.Space and ask another Agent, such as Codex reviewing Claude Code's work, for a second opinion."
+      "description": "Ask Codex, Grok, DeepSeek, OpenCode, and Claude Code the same question in parallel, or have them review your diff, and get one answer that shows where they agree and disagree."
     }
   ]
 }
