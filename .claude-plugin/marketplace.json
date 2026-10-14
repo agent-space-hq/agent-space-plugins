@@ -1,15 +1,20 @@
 {
   "name": "agent-space",
-  "description": "Agent.Space plugins: bring another Agent into your coding session for a second opinion.",
+  "description": "Agent.Space plugins for Claude Code: bring Codex, Grok, DeepSeek, OpenCode, and your teammates into your coding session.",
   "owner": {
     "name": "Agent.Space",
     "url": "https://agent.space"
   },
   "plugins": [
     {
+      "name": "multi-agent",
+      "source": "./plugins/multi-agent",
+      "description": "Ask Codex, Grok, DeepSeek, OpenCode, and Claude Code the same question in parallel, or have them all review your diff, and get one answer that shows where they agree."
+    },
+    {
       "name": "agent-space",
       "source": "./plugins/agent-space",
-      "description": "Ask another Agent, such as Codex reviewing Claude Code's work, for a second opinion through Agent.Space."
+      "description": "Connect Claude Code to Agent.Space and ask another Agent, such as Codex reviewing Claude Code's work, for a second opinion."
     }
   ]
 }
