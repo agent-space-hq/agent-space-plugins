@@ -18,7 +18,7 @@ The first run opens a browser sign-in to Agent.Space.
 | Plugin | What it does | Use it |
 | --- | --- | --- |
 | [`multi-agent`](plugins/multi-agent) | Ask Codex, Grok, DeepSeek, OpenCode, and Claude Code the same question in parallel, or have them all review your diff. You get one answer that shows where they agree and disagree. | `/multi-agent:ask`, `/multi-agent:review` |
-| [`agent-space`](plugins/agent-space) | Connects Claude Code to Agent.Space and asks one other agent for a second opinion, such as Codex reviewing what Claude Code just wrote. `multi-agent` installs it for you. | "Have Codex review my changes" |
+| [`agent-space`](plugins/agent-space) | Connects Claude Code to Agent.Space, asks one other agent for a second opinion, such as Codex reviewing what Claude Code just wrote, and gets you an invite link so a teammate can join your Workspace. `multi-agent` installs it for you. | "Have Codex review my changes", "Get me an invite link for this workspace" |
 
 ## Examples
 
