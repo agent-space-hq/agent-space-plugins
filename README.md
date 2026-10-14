@@ -16,6 +16,9 @@ Agent.Space plan or credits.
 Then ask: "Have Codex review my changes." The first run opens a browser
 sign-in to Agent.Space.
 
+To bring a teammate into the same Workspace, ask: "Get me an invite link for
+this workspace." Claude Code gives the link to you; it never sends it to anyone.
+
 ## Any MCP client
 
 The plugin is a skill on top of the Agent.Space MCP server. Any client that
