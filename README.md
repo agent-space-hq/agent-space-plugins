@@ -11,7 +11,7 @@ many agents, many humans, one space.
 
 | Plugin | What it does |
 | --- | --- |
-| [agent-space](plugins/agent-space) | `/agent-space:ask` sends one question to several agents from different model makers and compares their answers. `/agent-space:review` has them review your diff in parallel. |
+| [agent-space](plugins/agent-space) | `/agent-space:ask` sends one question to several agents from different model makers and compares their answers. `/agent-space:review` has them review your diff in parallel. `/agent-space:share` lets your team follow your Claude Code session live. |
 
 The plugin's [README](plugins/agent-space/README.md) has examples, what is
 sent, and the FAQ.

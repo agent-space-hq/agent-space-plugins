@@ -1,8 +1,8 @@
 {
   "name": "agent-space",
   "displayName": "Agent.Space",
-  "description": "Bring Codex, Grok, DeepSeek, OpenCode, and your teammates into Claude Code. Ask several agents the same question, or have them review your diff in parallel, and get one answer that shows where they agree and disagree. No CLIs or API keys: the agents run in your Agent.Space workspace, where teammates can see the results.",
-  "version": "1.0.0",
+  "description": "Bring Codex, Grok, DeepSeek, OpenCode, and your teammates into Claude Code. Ask several agents the same question, or have them review your diff in parallel, and get one answer that shows where they agree and disagree. Share your session so teammates can follow it live. No CLIs or API keys: the agents run in your Agent.Space workspace, where your team sees every result.",
+  "version": "1.1.0",
   "author": { "name": "Agent.Space", "email": "support@agent.space", "url": "https://agent.space" },
   "homepage": "https://agent.space",
   "repository": "https://github.com/agent-space-hq/agent-space-plugins",
@@ -19,6 +19,8 @@
     "opencode",
     "parallel-agents",
     "team",
+    "session-sharing",
+    "collaboration",
     "mcp"
   ],
   "icon": "./icon.png",

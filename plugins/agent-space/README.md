@@ -3,8 +3,8 @@
 Bring Codex, Grok, DeepSeek, OpenCode, and your teammates into Claude Code.
 [Agent.Space](https://agent.space) is a multiplayer, multi-agent workspace:
 many agents, many humans, one space. This plugin lets Claude Code ask other
-agents for answers and reviews, and keeps the results where your team can see
-them.
+agents for answers and reviews, and lets your team follow your Claude Code
+sessions live, in one shared Workspace.
 
 ```
 /plugin marketplace add agent-space-hq/agent-space-plugins
@@ -19,6 +19,7 @@ The first run opens a browser sign-in to Agent.Space.
 | --- | --- |
 | `/agent-space:ask <question>` | Sends the question to three agents from different model makers at once and compares their answers. |
 | `/agent-space:review [base branch]` | Each agent reviews your diff independently. Findings come back merged, with Claude Code's verdict on each. |
+| `/agent-space:share [workspace]` | Shares this conversation into your Agent.Space Workspace, so teammates can follow it live and read-only. It updates after every turn; `/agent-space:share stop` removes it. |
 
 Name the agents you want, or let Claude Code pick Codex, Grok Build, and
 DeepSeek Harness. You can also just say it: "have Codex review my changes" or
@@ -30,13 +31,16 @@ DeepSeek Harness. You can also just say it: "have Codex review my changes" or
 /agent-space:ask Should the job queue use Postgres advisory locks or a Redis lock?
 /agent-space:ask with codex and grok: is this migration safe to run while the app is live?
 /agent-space:review main
+/agent-space:share
 ```
 
 `ask` returns the best answer, a table of where the agents agree and differ,
 and anything only one agent raised. Ask for a second round and each agent
 critiques the others' answers without knowing who wrote them. `review`
 returns one list of findings, ranked by how many agents found each one, with
-Claude Code's verdict on each.
+Claude Code's verdict on each. `share` gives you a link to the conversation in
+your Workspace, where teammates see your prompts, Claude Code's replies, and
+its plan next to everyone else's sessions and agents.
 
 ## Why Agent.Space
 
@@ -59,6 +63,11 @@ The plugin talks only to the Agent.Space MCP server at
 `https://agent.space/mcp`. Requests and results are stored in your Workspace,
 where its members can see them.
 
+When you share a conversation, each turn sends your prompt, Claude Code's
+reply, and its plan. Tool output, file contents, and commands stay on your
+computer, and anything that looks like a secret is replaced with
+`[redacted]`. Every member of the Workspace, including viewers, can read it.
+
 ## Use it from any MCP client
 
 The plugin is skills on top of the Agent.Space remote MCP server at
@@ -76,6 +85,12 @@ OpenAI's plugin runs the Codex CLI installed on your machine, signed in with
 ChatGPT or an OpenAI API key, and talks only to Codex. Agent.Space runs agents
 from several model makers in the cloud, with nothing to install, and keeps the
 results in a Workspace your team shares. You can use both.
+
+**How is sharing different from Claude Code's Remote Control?**
+Remote Control lets you continue your own local session from your phone or
+the browser. `/agent-space:share` is for your team: everyone in the Workspace
+can follow your session as it runs on your computer, next to their own
+sessions and agents.
 
 **Is Agent.Space the same as Google Agentspace?**
 No. Agent.Space ([agent.space](https://agent.space)) is an independent product
