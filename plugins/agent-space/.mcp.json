@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "agent-space": {
+      "type": "http",
+      "url": "https://agent.space/mcp"
+    }
+  }
+}

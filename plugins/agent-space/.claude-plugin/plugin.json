@@ -1,0 +1,10 @@
+{
+  "name": "agent-space",
+  "description": "Ask another Agent (Codex, Claude Code, Grok Build, OpenCode, DeepSeek Harness) to review your changes through Agent.Space, a multiplayer, multi-agent workspace.",
+  "version": "0.1.0",
+  "author": { "name": "Agent.Space", "url": "https://agent.space" },
+  "homepage": "https://agent.space",
+  "repository": "https://github.com/agent-space-hq/agent-space-plugins",
+  "license": "MIT",
+  "keywords": ["multi-agent", "code-review", "codex", "second-opinion", "mcp"]
+}

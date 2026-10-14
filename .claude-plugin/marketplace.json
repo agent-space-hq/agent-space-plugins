@@ -1,0 +1,15 @@
+{
+  "name": "agent-space",
+  "description": "Agent.Space plugins: bring another Agent into your coding session for a second opinion.",
+  "owner": {
+    "name": "Agent.Space",
+    "url": "https://agent.space"
+  },
+  "plugins": [
+    {
+      "name": "agent-space",
+      "source": "./plugins/agent-space",
+      "description": "Ask another Agent, such as Codex reviewing Claude Code's work, for a second opinion through Agent.Space."
+    }
+  ]
+}
