@@ -11,7 +11,9 @@ them.
 /plugin install agent-space@agent-space
 ```
 
-The first run opens a browser sign-in to Agent.Space.
+The first run opens a browser sign-in to Agent.Space, where you choose the
+Workspace the plugin works in. You can change it later under Connected apps in
+your Agent.Space settings.
 
 ## Commands
 
