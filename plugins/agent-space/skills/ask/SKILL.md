@@ -10,8 +10,9 @@ Agent.Space runs Codex, Claude Code, Grok Build, OpenCode, and DeepSeek
 Harness side by side in one shared Workspace, billed to the user's
 Agent.Space plan or credits. This skill sends one question to several of them
 in parallel and compares the answers. Every tool below comes from the
-`agent-space` MCP server. The first call opens a browser sign-in; ask the
-user to finish it.
+`agent-space` MCP server, which works in the one Workspace the user chose
+when connecting it. The first call opens a browser sign-in; ask the user to
+finish it.
 
 Question: $ARGUMENTS
 
@@ -30,30 +31,26 @@ If the question is empty, use what the user just asked.
    files. Say how confident you are and what would change your answer."
 3. Tell the user in one line which agents will answer, that the prompt goes to
    Agent.Space, and that the runs use their Agent.Space plan or credits.
-4. `list_workspaces`. Use the only Workspace, or the one the user names; if
-   there are several, ask which one.
-5. `get_workspace`. For each harness on the panel, reuse an Agent with that
-   harness, or `create_agent` with it.
-6. `list_execution_options` once. For each Agent, pick an option for its
-   harness, preferring `planAvailable`, then `flexAvailable`, and pass its
-   `configuration` unchanged.
-7. For each Agent, `create_session`, then `submit_turn` with the same prompt.
-   Start every Agent before you wait on any of them.
-8. Call `get_submission` with `waitSeconds: 20` on each unfinished submission
-   in turn until all have finished. If one returns a `userActionUrl`, give the
-   link to the user. If one fails, or is still running after about ten
-   minutes, go on without it and say so.
-9. Report, naming the agent behind every point:
+4. For each harness on the panel, `start_session` with that `harness`, the
+   prompt, and a short `title`. Leave out `model` and `computer`, so it runs
+   on the Workspace's cloud computer with the first model the Workspace can
+   use. Start every Agent before you wait on any of them.
+5. Call `get_turn` with the `sessionId` and `turnId` that `start_session`
+   returned and `waitSeconds: 20`, on each unfinished Turn in turn, until all
+   have ended. If one is `input_required`, ask the user to answer its
+   permission request in Agent.Space. If one fails, or is still running after
+   about ten minutes, go on without it and say so.
+6. Report, naming the agent behind every point:
    - **Answer**: the best answer in a few sentences, in your own judgment, and
      why.
    - **Where they agree** and **where they differ**: one short table, a row
      per point and a column per agent.
    - Anything only one agent raised that matters.
 
-   Never report an answer that `get_submission` did not return, and never
-   present your own view as an agent's. End with one line saying the full
-   answers are in the user's Agent.Space Workspace, where teammates can open
-   them.
-10. If the user asks for a second round, send each Agent the other answers,
-    labeled Answer A, B, and C without names, and ask it to point out errors
-    and say which answer is best. Then report again the same way.
+   Never report an answer that `get_turn` did not return, and never present
+   your own view as an agent's. End with one line saying the full answers are
+   in the user's Agent.Space Workspace, where teammates can open them.
+7. If the user asks for a second round, `start_turn` in each conversation
+   with the other answers, labeled Answer A, B, and C without names, and ask
+   its Agent to point out errors and say which answer is best. Follow those
+   Turns with `get_turn` as before, then report again the same way.
